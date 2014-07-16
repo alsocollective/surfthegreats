@@ -1,8 +1,10 @@
-console.log("setting up initial call for youtube");
-
 var num;
 
-var myPlayer = $("#youtube-player").Jtube({
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+	$('#youtube-player').removeAttr('id');
+	$('#background-container').addClass('bigimage');
+}else{
+	var myPlayer = $("#youtube-player").Jtube({
 		videoId:"NTjlTZ6gQoI",
 		skipvid:false,
 		skipWhash:false,
@@ -43,6 +45,8 @@ function onYouTubeIframeAPIReady() {
 	myPlayer.setupPlayer();
 }
 
+}
+
 $(document).ready(function(){
 	$("#project").removeClass('hide');
 	$("#project").addClass('animated fadeInUp');
@@ -57,8 +61,4 @@ setTimeout(function(){
 	$("#three").addClass('animated fadeInUp');
 	console.log("FADE");
 },60000);
-
-
-
-
 
