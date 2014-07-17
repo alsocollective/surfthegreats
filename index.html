@@ -69,18 +69,21 @@
 		<div>
 			<div id="three-section">
 			<div id="social-media">
-				<a href="https://www.facebook.com/surfthegreats" target="STG Facebook" onclick="trackOutboundLink('https://www.facebook.com/surfthegreats'); return false;"><img src="/static/images/facebook.png"></a>
-				<a href="https://twitter.com/surfthegreats" target="STG Twitter" onclick="trackOutboundLink('https://twitter.com/surfthegreats'); return false;"><img src="/static/images/twitter.png"></a>
-				<a href="http://instagram.com/surfthegreats" target="STG Instagram" onclick="trackOutboundLink('http://instagram.com/surfthegreats'); return false;"><img src="/static/images/instagram.png"></a>
-				<a href="http://google.com/+SurfthegreatsOrgPlus" target="STG Google Plus" onclick="trackOutboundLink('http://google.com/+SurfthegreatsOrgPlus'); return false;"><img src="/static/images/googleplus.png"></a>
+				<a href="https://www.facebook.com/surfthegreats" target="_blank" title="STG Facebook" onclick="trackLink('https://www.facebook.com/surfthegreats');"><img src="/static/images/facebook.png"></a>
 				
-				<a href="http://www.pinterest.com/surfthegreats/" target="STG Pinterest" onclick="trackOutboundLink('http://www.pinterest.com/surfthegreats/'); return false;"><img src="/static/images/pinterest.png"></a>
+				<a href="https://twitter.com/surfthegreats" target="_blank" title="STG Twitter" onclick="trackLink('https://twitter.com/surfthegreats');"><img src="/static/images/twitter.png"></a>
 				
-				<a href="https://vimeo.com/surfthegreats" target="STG Vimeo" onclick="trackOutboundLink('https://vimeo.com/surfthegreats'); return false;"><img src="/static/images/vimeo.png"></a>
+				<a href="http://instagram.com/surfthegreats" target="_blank" title="STG Instagram" onclick="trackLink('http://instagram.com/surfthegreats');"><img src="/static/images/instagram.png"></a>
 				
-				<a href="https://www.youtube.com/user/surfthegreats" target="STG YouTube" onclick="trackOutboundLink('https://www.facebook.com/surfthegreats'); return false;"><img src="/static/images/youtube.png"></a>
+				<a href="http://google.com/+SurfthegreatsOrgPlus" target="_blank" title="STG Google Plus" onclick="trackLink('http://google.com/+SurfthegreatsOrgPlus');"><img src="/static/images/googleplus.png"></a>
+				
+				<a href="http://www.pinterest.com/surfthegreats/" target="_blank" title="STG Pinterest" onclick="trackLink('http://www.pinterest.com/surfthegreats/');"><img src="/static/images/pinterest.png"></a>
+				
+				<a href="https://vimeo.com/surfthegreats" target="_blank" title="STG Vimeo" onclick="trackLink('https://vimeo.com/surfthegreats');"><img src="/static/images/vimeo.png"></a>
+				
+				<a href="https://www.youtube.com/user/surfthegreats" target="_blank" title="STG YouTube" onclick="trackLink('https://www.facebook.com/surfthegreats');"><img src="/static/images/youtube.png"></a>
 			</div>
-			<a href="mailto:aloha@surfthegreats.org" onclick="trackOutboundLink('mailto:aloha@surfthegreats.org'); return false;">aloha@surfthegreats.org</a>
+			<a href="mailto:aloha@surfthegreats.org" onclick="trackLink('mailto:aloha@surfthegreats.org');">aloha@surfthegreats.org</a>
 			</div>
 		</div>
 	</section>
@@ -106,13 +109,9 @@
 	* This function takes a valid URL string as an argument, and uses that URL string
 	* as the event label.
 	*/
-	var trackOutboundLink = function(url) {
-	   ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
-	     function () {
-	     	document.location = url;
-	     	console.log(url + ":clicked");
-	     }
-	   });
+	var trackLink = function(url) {
+	   ga('send', 'event', 'outbound', 'click', url);
+	   console.log(url + ":clicked")
 	}
 
 	ga('create', 'UA-52923114-1', 'auto');

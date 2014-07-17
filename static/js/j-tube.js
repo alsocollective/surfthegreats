@@ -1,5 +1,5 @@
 function onPlayerReady(){
-	console.log("what what!! this shouldn't be playeing?!!");
+	//console.log("what what!! this shouldn't be playeing?!!");
 }
 (function ( $ ) {
 $.fn.Jtube = function( options ) {
@@ -183,7 +183,7 @@ $.fn.Jtube = function( options ) {
 
 	this.setupPlayer = function(){
 		if(settings.debugMode){
-			console.log("set up player starting");
+			//console.log("set up player starting");
 		}
 		settings.player = new YT.Player(settings.iframeEl.id, {
 			height: settings.vidHeight,
@@ -225,12 +225,12 @@ $.fn.Jtube = function( options ) {
 			})
 		}
 		if(settings.debugMode){
-			console.log("setup player ending");
+			//console.log("setup player ending");
 		}
 	};
 	function onPlayerReady(evt){
 		if(settings.debugMode){
-			console.log("on player is ready");
+			//console.log("on player is ready");
 		}
 		if(!settings.cancle){
 			settings.iframeEl = $("#youtube-player")[0];
@@ -256,7 +256,7 @@ $.fn.Jtube = function( options ) {
 		settings.onLoaded(settings);
 
 		if(settings.debugMode){
-			console.log("on player is done");
+			//console.log("on player is done");
 		}
 	}
 	function fadeInEl(){
@@ -280,7 +280,7 @@ $.fn.Jtube = function( options ) {
 	}
 	function stateChange(evt){
 		if(settings.debugMode){
-			console.log("stateChange video is called " + evt.data);
+			//console.log("stateChange video is called " + evt.data);
 		}
 		// 0 video done playing
 		// 1 play
@@ -309,7 +309,7 @@ $.fn.Jtube = function( options ) {
 				}
 			}else {
 				if(settings.debugMode){
-					console.log("FORCE restart video");
+					//console.log("FORCE restart video");
 				}
 				settings.player.playVideo();
 			}
@@ -331,22 +331,22 @@ $.fn.Jtube = function( options ) {
 			settings.onBuffering(settings);
 		}
 		if(settings.debugMode){
-			console.log("stateChange video is done");
+			//console.log("stateChange video is done");
 		}
 	}
 	function myStartFunc(){
 		if(settings.debugMode){
-			console.log("myStartFunc");
+			//console.log("myStartFunc");
 		}
 	}
 	function myDoneFunc(){
 		if(settings.debugMode){
-			console.log("myDoneFunc");
+			//console.log("myDoneFunc");
 		}
 	}
 	function myPauseFunc() {
 		if(settings.debugMode){
-			console.log("myPauseFunc");
+			//console.log("myPauseFunc");
 		}
 	}
 	function setPlayerSizeCustom(){
