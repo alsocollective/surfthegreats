@@ -104,6 +104,10 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+  ga('create', 'UA-52923114-1', 'auto');
+	ga('require', 'displayfeatures');
+	ga('send', 'pageview');
+
 	/**
 	* Function that tracks a click on an outbound link in Google Analytics.
 	* This function takes a valid URL string as an argument, and uses that URL string
@@ -113,11 +117,6 @@
 	   ga('send', 'event', 'outbound', 'click', url);
 	   console.log(url + ":clicked")
 	}
-
-	ga('create', 'UA-52923114-1', 'auto');
-	ga('require', 'displayfeatures');
-	ga('send', 'pageview');
-
 </script>
 
 </body>
